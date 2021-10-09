@@ -1,3 +1,4 @@
+import 'package:ecommerce_shopping/screens/cart/cart_screen.dart';
 import 'package:ecommerce_shopping/screens/home/components/search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -21,7 +22,10 @@ class HomeHeader extends StatelessWidget {
           Expanded(
             flex: 1,
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>CartScreen())
+                );
+              },
               borderRadius: BorderRadius.circular(30),
               child: Container(
                 padding: EdgeInsets.all(12),

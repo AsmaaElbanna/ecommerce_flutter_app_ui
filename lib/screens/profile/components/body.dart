@@ -12,8 +12,12 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
       ProfilePicture(),
-      SizedBox(height: 30, width: double.infinity),
-      ProfileAction()
+      SizedBox(height: 10, width: double.infinity),
+      ProfileAction('My Account','assets/icons/User Icon.svg',(){}),
+      ProfileAction('Notifications','assets/icons/Bell.svg',(){}),
+      ProfileAction('Settings','assets/icons/Settings.svg',(){}),
+      ProfileAction('Help Center','assets/icons/Question mark.svg',(){}),
+      ProfileAction('Log Out','assets/icons/Log out.svg',(){}),
     ]);
   }
 }

@@ -28,8 +28,8 @@ class MyApp extends StatelessWidget {
           iconTheme: IconThemeData(color: Colors.black)
         )
       ),
-      home: ProfileScreen(),
-     // initialRoute: SplashScreen.routeId,
+      home: SplashScreen(),
+      // initialRoute: SplashScreen.routeId,
     );
   }
 }

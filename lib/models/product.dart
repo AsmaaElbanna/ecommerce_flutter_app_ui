@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 
 class Product {
+  final int? id;
   final String title, description;
   final List<String> images;
   final List<Color> colors;
   final double price, rating;
   final isFavorite, isPopular;
 
-  Product(this.title, this.description, this.images, this.colors, this.price,
+  Product(this.id,this.title, this.description, this.images, this.colors, this.price,
       this.rating, this.isFavorite, this.isPopular);
 }
 
 // Our demo Products
 
 List<Product> demoProducts = [
-  Product(
+  Product(0,
       'Wireless Controller for PS4™',
       description,
       [
@@ -33,7 +34,7 @@ List<Product> demoProducts = [
       4.8,
       true,
       true),
-  Product(
+  Product(1,
       'Nike Sport White - Man Pant',
       description,
       ["assets/images/Image Popular Product 2.png"],
@@ -47,7 +48,7 @@ List<Product> demoProducts = [
       4.8,
       false,
       true),
-  Product(
+  Product(2,
       'Gloves XC Omega - Polygon',
       description,
       ["assets/images/glap.png"],
@@ -61,8 +62,8 @@ List<Product> demoProducts = [
       4.8,
       true,
       true),
-  Product(
-      'Logitech Head phone _ Samsung',
+  Product(3,
+      'Logitech Head phone',
       description,
       ["assets/images/wireless headset.png"],
       [
