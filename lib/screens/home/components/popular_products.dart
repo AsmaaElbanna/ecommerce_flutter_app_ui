@@ -36,7 +36,7 @@ class PopularProductCard extends StatelessWidget {
           children: [
             InkWell(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen())
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(product))
                 );
               },
               child: AspectRatio(
