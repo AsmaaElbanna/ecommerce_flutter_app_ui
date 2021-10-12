@@ -1,5 +1,7 @@
 import 'package:ecommerce_shopping/screens/forgot_password/forgot_password_screen.dart';
+import 'package:ecommerce_shopping/screens/login/components/social_card.dart';
 import 'package:ecommerce_shopping/screens/login/login_success_screen.dart';
+import 'package:ecommerce_shopping/screens/sign_up/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 import '../../../constant.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -23,7 +25,7 @@ class _BodyState extends State<Body> {
                   style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black54),
+                      color: Colors.black),
                 ),
                 Text(
                   'Sign in with email and password \nor continue with social media',
@@ -37,6 +39,7 @@ class _BodyState extends State<Body> {
                   height: 20,
                 ),
                 SignForm(),
+                SizedBox(height: 20),
                 Container(
                   padding: EdgeInsets.only(bottom: 10),
                   width: double.infinity,
@@ -59,6 +62,7 @@ class _BodyState extends State<Body> {
                     ),
                   ),
                 ),
+                SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -67,12 +71,16 @@ class _BodyState extends State<Body> {
                     SocialCard('assets/icons/twitter.svg', () {}),
                   ],
                 ),
+              //  SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text('Don\'t have an account'),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpScreen())
+                          );
+                        },
                         child: Text(
                           'Sign Up',
                           style: TextStyle(
@@ -170,23 +178,4 @@ class _SignFormState extends State<SignForm> {
   }
 }
 
-class SocialCard extends StatelessWidget {
-  final String icon;
-  final Function press;
-  SocialCard(this.icon, this.press);
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: press(),
-      child: Container(
-        padding: EdgeInsets.all(12),
-        margin: EdgeInsets.all(12),
-        height: 40,
-        width: 40,
-        decoration:
-            BoxDecoration(shape: BoxShape.circle, color: Colors.grey.shade300),
-        child: SvgPicture.asset(icon),
-      ),
-    );
-  }
-}
+
